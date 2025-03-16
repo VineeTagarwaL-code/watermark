@@ -3,6 +3,7 @@ import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ThemeProvider } from "./providers";
 
 const geistSans = Geist({
@@ -90,6 +91,7 @@ export default function RootLayout({
             {children}
           </div>
         </ThemeProvider>
+        <Script defer src="https://unmani-vercel.vercel.app/script.js" data-website-id="72b7493e-a4d9-426c-b3ae-f6ae198568b3"></Script  >
       </body>
     </html>
   );
