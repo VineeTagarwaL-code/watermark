@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Watermark - Professional Image Watermarking Tool
 
-## Getting Started
+A modern, easy-to-use web application for adding professional watermarks to your images. Built with Next.js and powered by AI.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-14.0.0-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+## 🌟 Features
+
+- **Easy to Use**: Simple drag-and-drop interface for image upload
+- **Customizable Watermarks**: Add text or image watermarks with full customization options
+- **AI-Powered**: Smart watermark placement and optimization
+- **Real-time Preview**: See your changes instantly
+- **High Quality**: Maintain image quality while adding watermarks
+- **Responsive Design**: Works perfectly on all devices
+- **Dark Mode Support**: Built-in dark mode for comfortable viewing
+- **Privacy-First**: All processing happens in your browser
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.x or later
+- npm or yarn or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/watermark.git
+cd watermark
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+bun install
+```
+
+3. Create a `.env` file in the root directory and add your API keys:
+```env
+GEMINI_API_KEY=your_gemini_api_key
+UPSTASH_REDIS_REST_URL=your_redis_url
+UPSTASH_REDIS_REST_TOKEN=your_redis_token
+```
+
+4. Start the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
-pnpm dev
-# or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Built With
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Next.js](https://nextjs.org/) - React framework for production
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [shadcn/ui](https://ui.shadcn.com/) - UI components
+- [Google Gemini](https://ai.google.dev/) - AI capabilities
+- [Upstash Redis](https://upstash.com/) - Caching and rate limiting
 
-## Learn More
+## 📝 Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. Visit [watermark.vineet.pro](https://watermark.vineet.pro)
+2. Drag and drop your image or click to upload
+3. Customize your watermark:
+   - Choose between text or image watermark
+   - Adjust position, size, and opacity
+   - Select font and color for text watermarks
+4. Preview your changes in real-time
+5. Download your watermarked image
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Deploy on Vercel
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Vineet Agarwal**
+- Website: [vineet.pro](https://vineet.pro)
+- Twitter: [@vineetagarwal](https://twitter.com/vineetagarwal)
+- GitHub: [@vineetagarwal](https://github.com/vineetagarwal)
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors who have helped shape this project
+- Special thanks to the Next.js and shadcn/ui communities
+- Icons and assets from various open-source projects
+
+---
+
+Made with ❤️ by Vineet Agarwal
