@@ -1,6 +1,6 @@
-# Watermark - Professional Image Watermarking Tool
+# Watermark - Professional Image Watermark Removing Tool
 
-A modern, easy-to-use web application for adding professional watermarks to your images. Built with Next.js and powered by AI.
+A modern, easy-to-use web application for removing professional watermarks to your images. Built with Next.js and powered by AI.
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.0.0-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue)](https://www.typescriptlang.org/)
