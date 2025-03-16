@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://watermark.vineet.pro'),
   title: {
-    default: 'Watermark - Add Watermarks to Your Images',
+    default: 'Watermark - Remove Watermarks from Your Images',
     template: '%s | Watermark'
   },
-  description: 'Add professional watermarks to your images with our easy-to-use watermarking tool. Protect your digital content with customizable text and image watermarks.',
-  keywords: ['watermark', 'image watermark', 'photo watermark', 'digital watermark', 'copyright protection', 'image protection'],
+  description: 'Remove watermarks from your images with our easy-to-use watermark removal tool. Protect your digital content with customizable text and image watermarks.',
+  keywords: ['watermark', 'image watermark', 'photo watermark', 'digital watermark', 'copyright protection', 'image protection', 'remove watermark', 'remove image watermark', 'remove photo watermark', 'remove digital watermark', 'remove copyright protection', 'remove image protection'],
   authors: [{ name: 'Vineet Agarwal' }],
   creator: 'Vineet Agarwal',
   publisher: 'Vineet Agarwal',
@@ -36,21 +36,21 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://watermark.vineet.pro',
     siteName: 'Watermark',
-    title: 'Watermark - Add Watermarks to Your Images',
-    description: 'Add professional watermarks to your images with our easy-to-use watermarking tool. Protect your digital content with customizable text and image watermarks.',
+    title: 'Watermark - Remove Watermarks from Your Images',
+    description: 'Remove watermarks from your images with our easy-to-use watermark removal tool. Protect your digital content with customizable text and image watermarks.',
     images: [
       {
         url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'Watermark - Add Watermarks to Your Images',
+        alt: 'Watermark - Remove Watermarks from Your Images',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Watermark - Add Watermarks to Your Images',
-    description: 'Add professional watermarks to your images with our easy-to-use watermarking tool. Protect your digital content with customizable text and image watermarks.',
+    title: 'Watermark - Remove Watermarks from Your Images',
+    description: 'Remove watermarks from your images with our easy-to-use watermark removal tool. Protect your digital content with customizable text and image watermarks.',
     images: ['/og.png'],
     creator: '@vineetagarwal',
   },
