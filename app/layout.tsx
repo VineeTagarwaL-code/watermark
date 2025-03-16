@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'Add professional watermarks to your images with our easy-to-use watermarking tool. Protect your digital content with customizable text and image watermarks.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og.png',
         width: 1200,
         height: 630,
         alt: 'Watermark - Add Watermarks to Your Images',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Watermark - Add Watermarks to Your Images',
     description: 'Add professional watermarks to your images with our easy-to-use watermarking tool. Protect your digital content with customizable text and image watermarks.',
-    images: ['/og-image.jpg'],
+    images: ['/og.png'],
     creator: '@vineetagarwal',
   },
   robots: {
