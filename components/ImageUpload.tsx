@@ -59,6 +59,14 @@ export default function ImageUpload() {
           image: imageData,
         }),
       })
+      if(response.status === 429) {
+        toast.error("Rate limit exceeded", {
+          description: "Please try again in 30 seconds."
+        })
+        setImageState(prev => ({ ...prev, status: 'error', error: "Rate limit exceeded" }))
+        clearProgressSimulation()
+        return
+      }
 
       clearProgressSimulation()
       setImageState(prev => ({ ...prev, progress: 100 }))
@@ -72,9 +80,9 @@ export default function ImageUpload() {
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "Failed to generate image"
       setImageState(prev => ({ ...prev, status: 'error', error: errorMessage }))
-      toast.error("Failed to generate image", {
-        description: "Please try again with a different image."
-      })
+        toast.error("Failed to generate image", {
+          description: "Please try again with a different image."
+        })
     }
   }, [simulateProgress])
 

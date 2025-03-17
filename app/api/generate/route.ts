@@ -25,7 +25,7 @@ const redis = new Redis({
 // Create a new ratelimiter that allows 10 requests per 10 seconds
 const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(10, "10 s"),
+  limiter: Ratelimit.slidingWindow(1, "30 s"),
   analytics: true,
 });
 
@@ -65,7 +65,7 @@ export async function POST(request: Request) {
     
     // Rate limiting
     const { success, limit, reset, remaining } = await ratelimit.limit(ip);
-    
+
     if (!success) {
       return NextResponse.json(
         { 
