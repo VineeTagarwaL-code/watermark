@@ -91,7 +91,7 @@ export default function RootLayout({
             {children}
           </div>
         </ThemeProvider>
-        <Script defer src="https://unmani-vercel.vercel.app/script.js" data-website-id="72b7493e-a4d9-426c-b3ae-f6ae198568b3"></Script  >
+        <Script  defer src="https://stats.vineet.pro/script.js" data-website-id="72b7493e-a4d9-426c-b3ae-f6ae198568b3"></Script  >
       </body>
     </html>
   );
