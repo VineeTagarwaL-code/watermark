@@ -115,7 +115,17 @@ export async function POST(request: Request) {
 
     const result = await model.generateContent([
       {
-        text: "Remove the watermark from this image only, return the clean image after removing the watermark. Make sure only the text over the image which is watermark is removed and nothing else other than that, return a clear and clean image after that."
+        text: `Remove all watermarks from this image while maintaining the highest possible image quality and detail. Handle the following types of watermarks effectively:
+1. Semi-transparent or translucent watermarks that blend with the background
+2. Large watermarks covering significant portions of the image
+3. Watermarks with complex patterns, gradients, or varying opacity
+4. Multiple watermarks in different locations
+5. Company logos and branding elements
+6. Repeating pattern watermarks across the entire image
+7. Text-based watermarks in any font style or language
+8. Watermarks placed over highly detailed areas
+
+Preserve all original image details, textures, and colors. Seamlessly reconstruct any image content hidden beneath watermarks using context from surrounding areas. Ensure there are no artifacts, blurring, or color inconsistencies where watermarks were removed. The final image should look as if the watermark was never present.`
       },
       {
         inlineData: {

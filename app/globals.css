@@ -120,3 +120,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Themed Tweet Styling */
+.themed-tweets {
+  @apply border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900;
+}
+
+/* Custom styling for react-tweet components */
+.themed-tweets .react-tweet-theme {
+  --tweet-body-font: inherit;
+  --tweet-header-font: inherit;
+  --tweet-bg-color: transparent;
+  --tweet-border: none;
+  --tweet-border-radius: 0;
+  --tweet-font-color: inherit;
+  --tweet-link-color: hsl(var(--primary));
+  --tweet-space-x: 1rem;
+  --tweet-space-y: 1rem;
+  --tweet-header-font-weight: 600;
+}
+
+.themed-tweets .react-tweet {
+  max-width: 100% !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
+
+/* Ensure proper spacing within tweet cards */
+.themed-tweets .react-tweet-container {
+  padding: 1rem;
+}
+
+/* Remove excess border from Tweet component */
+.themed-tweets .react-tweet-container {
+  border: none !important;
+  box-shadow: none !important;
+}
