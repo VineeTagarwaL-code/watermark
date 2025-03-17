@@ -3,13 +3,15 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { FileDown, ImageIcon, Loader2, Upload, X } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
+import type { FileRejection } from "react-dropzone"
 import Image from "next/image"
 import { Progress } from "@/components/ui/progress"
 import type React from "react"
 import { Skeleton } from "@/components/ui/skeleton"
+import { toast } from "sonner"
 import { useDropzone } from "react-dropzone"
 
 export default function ImageUpload() {
@@ -38,6 +40,13 @@ export default function ImageUpload() {
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0]
+    const allowedTypes = ["image/png", "image/jpeg", "image/jpg"]
+    if (file && !allowedTypes.includes(file.type)) {
+      toast.error("Invalid file type", {
+        description: "Please upload a PNG, JPG, or JPEG image.",
+      })
+      return
+    }
     if (file) {
       const reader = new FileReader()
       reader.onloadend = () => {
@@ -83,13 +92,49 @@ export default function ImageUpload() {
     }
   }
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+  const { getRootProps, getInputProps, isDragActive, fileRejections } = useDropzone({
     onDrop,
     accept: {
-      "image/*": [".png", ".jpg", ".jpeg", ".gif"],
+      "image/*": [".png", ".jpg", ".jpeg"],
     },
     maxFiles: 1,
+    noClick: false,
+    noKeyboard: false,
+    preventDropOnDocument: true,
   })
+
+  // Handle rejection when fileRejections change
+  useEffect(() => {
+    if (fileRejections.length > 0) {
+      const rejection = fileRejections[0] as FileRejection
+      const error = rejection.errors[0]
+      if (error.code === "file-invalid-type") {
+        toast.error("Invalid file type", {
+          description: "Please upload a PNG, JPG, or JPEG image.",
+          action: {
+            label: "Dismiss",
+            onClick: () => {},
+          },
+        });
+      } else if (error.code === "too-many-files") {
+        toast.error("Too many files", { 
+          description: "Please upload only one image at a time.",
+          action: {
+            label: "Dismiss",
+            onClick: () => {},
+          },
+        });
+      } else {
+        toast.error("Upload failed", { 
+          description: "Please try again with a different image.",
+          action: {
+            label: "Dismiss",
+            onClick: () => {},
+          },
+        });
+      }
+    }
+  }, [fileRejections])
 
   const handleExport = (format: string) => {
     if (!generatedImage) return
@@ -162,7 +207,7 @@ export default function ImageUpload() {
                     <p className="text-base font-medium text-neutral-700 dark:text-neutral-300">
                       {isDragActive ? "Drop to upload" : "Drag image here or click to upload"}
                     </p>
-                    <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">PNG, JPG, JPEG, GIF</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">PNG, JPG, JPEG</p>
                   </div>
                 </div>
               )}
