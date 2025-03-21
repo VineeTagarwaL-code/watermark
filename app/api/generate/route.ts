@@ -115,17 +115,40 @@ export async function POST(request: Request) {
 
     const result = await model.generateContent([
       {
-        text: `Remove all watermarks from this image while maintaining the highest possible image quality and detail. Handle the following types of watermarks effectively:
-1. Semi-transparent or translucent watermarks that blend with the background
-2. Large watermarks covering significant portions of the image
-3. Watermarks with complex patterns, gradients, or varying opacity
-4. Multiple watermarks in different locations
-5. Company logos and branding elements
-6. Repeating pattern watermarks across the entire image
-7. Text-based watermarks in any font style or language
-8. Watermarks placed over highly detailed areas
+        text: `PRIORITY TASK: COMPLETELY REMOVE ALL WATERMARKS FROM THIS IMAGE
 
-Preserve all original image details, textures, and colors. Seamlessly reconstruct any image content hidden beneath watermarks using context from surrounding areas. Ensure there are no artifacts, blurring, or color inconsistencies where watermarks were removed. The final image should look as if the watermark was never present.`
+This is a real estate property image with a watermark that must be completely eliminated while preserving perfect image quality. The watermark appears to be a real estate company logo with text that is semi-transparent.
+
+Step 1: DETECTION - Identify ALL watermark elements:
+- Use frequency domain analysis to detect the house/building icon
+- Employ OCR to identify any text elements like "Property" or "Realty"
+- Focus on the center region where watermarks are commonly placed
+- Scan all color channels separately to detect low-opacity elements
+- Identify exact boundaries of the watermark region
+- Detect any subtle shadows, glows, or blend effects around the watermark
+
+Step 2: REMOVAL - Apply multiple specialized techniques:
+- Use advanced content-aware fill algorithms to replace the watermarked region
+- Implement structural inpainting to preserve architectural details
+- Apply seamless cloning to maintain consistent lighting and texture
+- Use gradient domain techniques to eliminate any transition artifacts
+- Preserve exact building details including window frames, doors, walls, and facade textures
+- Maintain consistent color temperature and lighting across the entire image
+
+Step 3: VERIFICATION - Ensure complete removal:
+- Perform differential analysis between original and processed regions
+- Confirm complete elimination of all watermark traces
+- Ensure no blurring, artifacts, or inconsistencies in the reconstruction area
+- Verify texture consistency in all formerly watermarked areas
+
+THE FINAL IMAGE MUST:
+1. Have absolutely NO trace of the original watermark
+2. Maintain perfect architectural detail integrity
+3. Show completely natural lighting and textures
+4. Be indistinguishable from a professional photograph with no watermark
+5. Have perfect clarity and sharpness in all areas, especially where the watermark was removed
+
+Apply the highest level of processing power and advanced algorithms to achieve perfect, undetectable watermark removal. This is a critical task requiring the most sophisticated techniques available.`
       },
       {
         inlineData: {
