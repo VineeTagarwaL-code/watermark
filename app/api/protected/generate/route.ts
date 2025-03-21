@@ -211,24 +211,19 @@ export async function POST(request: Request) {
 
     const result = await model.generateContent([
       {
-        text: `Create a perfectly transparent background removal of this image with absolutely NO background elements remaining:
+        text: `Remove all watermarks from this image
+        while maintaining the highest possible image quality and detail. Handle the following types of watermarks effectively:
+1. Semi-transparent or translucent watermarks that blend with the background
+2. Large watermarks covering significant portions of the image
+3. Watermarks with complex patterns, gradients, or varying opacity
+4. Multiple watermarks in different locations
+5. Company logos and branding elements
+6. Repeating pattern watermarks across the entire image
 
-1. Output format: PNG with 100% transparent background (alpha channel)
-2. Remove EVERY SINGLE PIXEL of background - no exceptions
-3. Only preserve the main character/subject with pixel-perfect edge detection
-4. For cartoon/illustrated images:
-   - Detect and preserve ONLY the character outlines and fills
-   - Remove ALL background colors, patterns, gradients and effects completely
-   - Use precise edge detection on cartoon character boundaries
-5. Background definition: ANY color or element that is not part of the main subject
-6. Ensure complete transparency (pure alpha) surrounds the subject
-7. Do not leave any hints, shadows, or partial opacity from the background
-8. Preserve the original colors and details of the subject only
-9. Check all corners and edges to ensure NO background pixels remain
-10. The final image should look like the character is floating on a completely transparent background
+Pay special attention to detecting subtle variations in pixel values, color patterns, and texture inconsistencies that might indicate the presence of very low opacity watermarks. Use advanced techniques to identify these barely perceptible watermarks by analyzing color channel information and contrast differences across the image.
 
-The success of this task depends on COMPLETE background removal with zero background pixels remaining.`
-      },
+Preserve all original image details, textures, and colors. Seamlessly reconstruct any image content hidden beneath watermarks using context from surrounding areas. Ensure there are no artifacts, blurring, or color inconsistencies where watermarks were removed. The final image should look as if the watermark was never present.`
+},
       {
         inlineData: {
           mimeType: "image/jpeg",
